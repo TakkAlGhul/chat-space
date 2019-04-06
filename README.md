@@ -23,7 +23,7 @@
 
 | column | Type | Options |
 |:------:|:----:|:-------:|
-|title|string|null: false|
+|name|string|null: false|
 
 #### Association
 - has_many :mesasges
