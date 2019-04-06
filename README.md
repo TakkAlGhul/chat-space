@@ -3,20 +3,48 @@
   This is a Chat application.
 
 
-* Ruby version
+## Database Construction
 
-* System dependencies
+### Users Table
 
-* Configuration
+| column | Type | Options |
+|:------:|:----:|:-------:|
+|name|string|null: false, index: true|
+|email|string|null: false, unique: true|
+|password|string|null: false |
 
-* Database creation
+#### Association
+- has_many :messages
+- has_many :groups, through: members
 
-* Database initialization
 
-* How to run the test suite
+### Groups Table
 
-* Services (job queues, cache servers, search engines, etc.)
+| column | Type | Options |
+|:------:|:----:|:-------:|
+|title|string|null: false|
 
-* Deployment instructions
+#### Association
+- has_many :mesasges
+- has_many :users, through: members
 
-* ...
+
+### Members Table
+| column | Type | Options |
+|:------:|:----:|:-------:|
+|user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
+
+#### Association
+- belongs_to :group
+- belongs_to :user
+
+
+### Messages Table
+| column | Type | Options |
+|:------:|:----:|:-------:|
+|body|text|
+|image|string|
+|group_id|integer|null: false, foreign_key: true|
+|user_id|integer|null: false, foreign_key: true|
+
