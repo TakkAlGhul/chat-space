@@ -1,0 +1,17 @@
+.chat-side
+  .side-header
+    %p.side-header__user-name
+      tak
+      %ul.user-menu
+        %li.user-menu__edit-user
+          %a{:href => '/groups/new'}
+            %i.fa.fa-edit
+        %li.user-menu__new-group
+          %a{:href => '/users/:id/edit'}
+            %i.fa.fa-cog
+  .groups
+    %a{:href => '/groups/338/messages'}
+      %p.group__group-name
+        fff
+      %p.group__latest-message
+        hello
