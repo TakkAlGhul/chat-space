@@ -1,15 +1,207 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
+/*!
+ * YUI 3.5.0 - reset.css (http://developer.yahoo.com/yui/3/cssreset/)
+ * http://cssreset.com
+ * Copyright 2012 Yahoo! Inc. All rights reserved.
+ * http://yuilibrary.com/license/
  */
+/*
+    TODO will need to remove settings on HTML since we can't namespace it.
+    TODO with the prefix, should I group by selector or property for weight savings?
+*/
+html {
+  color: #000;
+  background: #FFF;
+}
+
+/*
+    TODO remove settings on BODY since we can't namespace it.
+*/
+/*
+    TODO test putting a class on HEAD.
+        - Fails on FF.
+*/
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td {
+  margin: 0;
+  padding: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+fieldset,
+img {
+  border: 0;
+}
+
+/*
+    TODO think about hanlding inheritence differently, maybe letting IE6 fail a bit...
+*/
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+strong,
+th,
+var {
+  font-style: normal;
+  font-weight: normal;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+caption,
+th {
+  text-align: left;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+
+q:before,
+q:after {
+  content: '';
+}
+
+abbr,
+acronym {
+  border: 0;
+  font-variant: normal;
+}
+
+/* to preserve line-height and selector appearance */
+sup {
+  vertical-align: text-top;
+}
+
+sub {
+  vertical-align: text-bottom;
+}
+
+input,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/*to enable resizing for IE*/
+input,
+textarea,
+select {
+  *font-size: 100%;
+}
+
+/*because legend doesn't inherit in IE */
+legend {
+  color: #000;
+}
+
+/* YUI CSS Detection Stamp */
+#yui3-css-stamp.cssreset {
+  display: none;
+}
+
+.chat-side {
+  width: 300px;
+  height: 100vh;
+  position: absolute;
+}
+
+.chat-sidea {
+  color: #ffffff;
+}
+
+.chat-side .side-header {
+  background-color: #253541;
+  height: 100px;
+  font-weight: bold;
+  padding: 0 20px;
+}
+
+.chat-side .side-headerp {
+  margin: auto;
+  display: block;
+}
+
+.chat-side .side-header__user-name {
+  font-size: 16px;
+  color: #ffffff;
+}
+
+.chat-side .groups {
+  background-color: #2f3e51;
+  height: 100%;
+  padding: 0 20px;
+}
+
+.chat-side .groups .group {
+  color: white;
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
+
+.chat-side .groups .group__group-name {
+  font-size: 15px;
+  padding-bottom: 5px;
+}
+
+.chat-side .groups .group__latest-message {
+  font-size: 11px;
+}
+
+.chat-main {
+  display: block;
+  width: calc(100vw - 300px);
+  height: 100vh;
+  position: relative;
+  left: 300px;
+}
+
+.chat-main .main-header {
+  position: fixed;
+  z-index: 10;
+  height: 100px;
+  width: 100%;
+  font-weight: bold;
+  padding: 0 20px;
+}
+/*# sourceMappingURL=application.css.map */
