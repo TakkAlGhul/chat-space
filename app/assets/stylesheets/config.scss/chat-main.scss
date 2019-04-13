@@ -3,15 +3,38 @@
     width: calc(100vw - 300px);
     height: 100vh;
     position: relative;
-
+    padding: 0 40px;
 
     .main-header {
-        position: fixed;
-        z-index: 10;
         height: 100px;
-        width: 100%;
-        font-weight: bold;
-        padding: 0 20px;
+        display: flex;
+        border-bottom: solid 1px #eee;
+        
+        .current-group {
+            font-size: 20px;
+            color: #333;
+            padding-top: 35px;
+            
+            &__name {
+                display: block;
+            }
+        }
+
+        .member-list {
+            display: flex;
+            margin-top: 15px;
+            font-size: 12px;
+            color: #999;
+        }
+
+
         
     }
-}   
+ 
+    .messages {
+        height: calc(100vh - 190px);
+        padding-top: 100px;
+        background-color: #fafafa;
+
+    }
+}

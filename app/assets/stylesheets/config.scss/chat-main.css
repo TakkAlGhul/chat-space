@@ -3,15 +3,39 @@
   width: calc(100vw - 300px);
   height: 100vh;
   position: relative;
-  left: 300px;
+  padding: 0 40px;
 }
 
 .chat-main .main-header {
-  position: fixed;
-  z-index: 10;
   height: 100px;
-  width: 100%;
-  font-weight: bold;
-  padding: 0 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-bottom: solid 1px #eee;
+}
+
+.chat-main .main-header .current-group {
+  font-size: 20px;
+  color: #333;
+  padding-top: 35px;
+}
+
+.chat-main .main-header .current-group__name {
+  display: block;
+}
+
+.chat-main .main-header .member-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 15px;
+  font-size: 12px;
+  color: #999;
+}
+
+.chat-main .messages {
+  height: calc(100vh - 190px);
+  padding-top: 100px;
+  background-color: #fafafa;
 }
 /*# sourceMappingURL=chat-main.css.map */
