@@ -1,0 +1,17 @@
+.chat-main {
+  display: block;
+  width: calc(100vw - 300px);
+  height: 100vh;
+  position: relative;
+  left: 300px;
+}
+
+.chat-main .main-header {
+  position: fixed;
+  z-index: 10;
+  height: 100px;
+  width: 100%;
+  font-weight: bold;
+  padding: 0 20px;
+}
+/*# sourceMappingURL=chat-main.css.map */
