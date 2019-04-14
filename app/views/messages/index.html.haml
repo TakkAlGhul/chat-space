@@ -3,13 +3,11 @@
     .side-header
       %p.side-header__user-name
         tak
-      %ul.user-menu
-        %li.user-menu__edit-user
-          %a{:href => '/groups/new'}
-            %i.fa.fa-edit
-        %li.user-menu__new-group
-          %a{:href => '/users/:id/edit'}
-            %i.fa.fa-cog
+      .user-menu
+        = link_to '/groups/new' do
+          = icon("far", "edit")
+        = link_to '/users/:id/edit' do
+          = icon("far", "cog")
     .groups
       %a{:href => '/groups/338/messages'}
         .group
@@ -22,16 +20,16 @@
       .current-group
         %h2.current-group__name  fff
         %ul.member-list
-          Member :
+          Member :  
           %li.member-list__member tak
       %a{:href => 'groups/338/edit'}
         .main-header__edit-btn Edit
     .messages
       .message
-      .upper-info
-        %p.upper-info__user  tak
-        %p.upper-info__date  2019/00/00(sun) 00:00:00
-      %p.message__text hello
+        .upper-info
+          %p.upper-info__user  tak
+          %p.upper-info__date  2019/00/00(sun) 00:00:00
+        %p.message__text hello
     .form
       %form#new_message.new-message{:enctype => "multipart/form-data", :action => "/groups/338/messages", :accept_charset => "UTF-8", :method => "post"}
         %input{:name => "utf8", :type => "hidden", :value => "✓"}
@@ -42,8 +40,5 @@
             %i.fa.fa-image
               %input#message_image.image-label__input{:type => "file", :name => "message[image]"}
           %input.new-message__submit-btn{:type => "submit", :name => "commit", :value => "Send", :"data-disable-with" => "Send"}
-
-
-
 
 

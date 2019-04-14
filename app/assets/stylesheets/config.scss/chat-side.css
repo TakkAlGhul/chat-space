@@ -1,11 +1,5 @@
 .chat-side {
   width: 300px;
-  height: 100vh;
-  position: fixed;
-}
-
-.chat-sidea {
-  color: #ffffff;
 }
 
 .chat-side .side-header {
@@ -19,21 +13,20 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-
-.chat-side .side-headerp {
-  display: block;
-}
-
-.chat-side .side-header__user-name {
-  font-size: 16px;
   color: #ffffff;
+}
+
+.chat-side .side-header .user-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .chat-side .groups {
   background-color: #2f3e51;
-  height: 100%;
-  padding: 0 20px;
+  height: calc(100vh - 100px);
+  padding: 20px 20px 0;
+  overflow: scroll;
 }
 
 .chat-side .groups .group {

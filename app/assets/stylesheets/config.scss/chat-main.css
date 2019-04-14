@@ -1,9 +1,5 @@
 .chat-main {
-  display: block;
   width: calc(100vw - 300px);
-  height: 100vh;
-  position: relative;
-  left: 300px;
 }
 
 .chat-main .main-header {
@@ -13,9 +9,9 @@
   display: flex;
   border-bottom: solid 1px #eee;
   padding: 0 40px;
-  position: fixed;
-  z-index: 10;
-  top: 0;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .chat-main .main-header .current-group {
@@ -37,6 +33,10 @@
   color: #999;
 }
 
+.chat-main .main-header .current-group .member-list__member {
+  margin-left: 5px;
+}
+
 .chat-main .main-header__edit-btn {
   height: 40px;
   line-height: 40px;
@@ -44,63 +44,87 @@
   margin-top: 30px;
   border: solid 1px #38aef0;
   color: #38aef0;
-  right: 0;
-  float: right;
 }
 
 .chat-main .messages {
-  height: calc(100vh - 236px);
+  height: calc(100vh - 190px);
   background-color: #fafafa;
-  padding: 146px 40px 0;
+  padding: 46px 40px 0;
   overflow: scroll;
 }
 
-.chat-main .messages .upper-info {
+.chat-main .messages .message {
+  padding-bottom: 40px;
+}
+
+.chat-main .messages .message__text {
+  color: #434a54;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.chat-main .messages .message .upper-info {
   margin-bottom: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.chat-main .messages .upper-info__user {
+.chat-main .messages .message .upper-info__user {
   font-weight: bold;
   font-size: 20px;
 }
 
-.chat-main .messages .upper-info__date {
+.chat-main .messages .message .upper-info__date {
   color: #999;
   font-size: 12px;
   margin-left: 10px;
 }
 
 .chat-main .form {
+  background-color: #ddd;
+  padding: 20px 40px;
+  height: 90px;
+}
+
+.chat-main .form .new-message {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  background-color: #ddd;
-  padding: 20px 40px;
-  margin-top: auto;
 }
 
-.chat-main .form .input-box {
+.chat-main .form .new-message .input-box {
   position: relative;
+  width: 100%;
 }
 
-.chat-main .form .input-box__text {
+.chat-main .form .new-message .input-box__text {
   height: 50px;
-  line-height: 50px;
-  padding: 0 10px;
-  width: 100vh;
+  width: 100%;
+  padding: 0 40px 0 10px;
+  color: #434a54;
+  border-style: none;
 }
 
-.chat-main .form .input-box .new-message__submit-btn {
+.chat-main .form .new-message .input-box .image-label {
+  right: 0;
+  top: 10;
+  bottom: 0;
+  position: absolute;
+  cursor: pointer;
+}
+
+.chat-main .form .new-message__submit-btn {
+  height: 50px;
   width: 100px;
-  height: 50px;
   padding: 0 30px;
   margin-left: 15px;
   background-color: #38aef0;
   color: white;
   cursor: pointer;
-  float: right;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  position: absolute;
 }
 /*# sourceMappingURL=chat-main.css.map */
