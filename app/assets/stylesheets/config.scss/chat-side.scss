@@ -11,23 +11,19 @@
         align-items: center;
         color: #ffffff; 
 
-        .user-menu {
+        &__user-menu {
             display: flex;
+            margin-left: auto;
+
+
+            .fa {
+            color: #fff;
+            margin-left: 0.3rem;
+            
+            }
         }
 
 
-        // .user-menu{
-        //     color: #ffffff;
-
-        //     &__edit-user {
-        //         float: right;
-        //     }
-
-        //     &__new-group {
-        //         float: right;
-        //     }
-
-        // }
 
     }
     .groups {

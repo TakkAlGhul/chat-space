@@ -158,10 +158,16 @@ legend {
   color: #ffffff;
 }
 
-.chat-side .side-header .user-menu {
+.chat-side .side-header__user-menu {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  margin-left: auto;
+}
+
+.chat-side .side-header__user-menu .fa {
+  color: #fff;
+  margin-left: 0.3rem;
 }
 
 .chat-side .groups {
@@ -237,7 +243,7 @@ legend {
 .chat-main .messages {
   height: calc(100vh - 190px);
   background-color: #fafafa;
-  padding: 46px 40px 0;
+  padding: 46px 40px;
   overflow: scroll;
 }
 
@@ -273,6 +279,7 @@ legend {
   background-color: #ddd;
   padding: 20px 40px;
   height: 90px;
+  clear: both;
 }
 
 .chat-main .form .new-message {
@@ -290,16 +297,20 @@ legend {
   height: 50px;
   width: 100%;
   padding: 0 40px 0 10px;
-  color: #434a54;
+  color: #434a54bd;
   border-style: none;
 }
 
 .chat-main .form .new-message .input-box .image-label {
-  right: 0;
-  top: 10;
-  bottom: 0;
-  position: absolute;
   cursor: pointer;
+  position: absolute;
+  font-size: 1.3rem;
+  right: 10px;
+  top: 10px;
+}
+
+.chat-main .form .new-message .input-box .image-label__input {
+  display: none;
 }
 
 .chat-main .form .new-message__submit-btn {
@@ -310,10 +321,6 @@ legend {
   background-color: #38aef0;
   color: white;
   cursor: pointer;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  position: absolute;
 }
 
 html {

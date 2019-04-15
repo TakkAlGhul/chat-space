@@ -16,10 +16,16 @@
   color: #ffffff;
 }
 
-.chat-side .side-header .user-menu {
+.chat-side .side-header__user-menu {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  margin-left: auto;
+}
+
+.chat-side .side-header__user-menu .fa {
+  color: #fff;
+  margin-left: 0.3rem;
 }
 
 .chat-side .groups {
