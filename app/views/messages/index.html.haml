@@ -3,11 +3,11 @@
     .side-header
       %p.side-header__user-name
         tak
-      .user-menu
-        = link_to '/groups/new' do
-          = icon("far", "edit")
+      .side-header__user-menu
+        = link_to '/groups/new' do 
+          = fa_icon 'edit' 
         = link_to '/users/:id/edit' do
-          = icon("far", "cog")
+          = fa_icon 'cog'
     .groups
       %a{:href => '/groups/338/messages'}
         .group
@@ -36,9 +36,9 @@
         %input{:type =>"hidden", :name => "authenticity_token", :value => "2lRrYagQNL9HSCsEIg9T2ODhmMyv24QsCb5av1x+BxMFmulp5vCysq+5QrdYbKKsvS4L4yOncyUoVWzfhmCFCA=="}
         .input-box
           %input#message_content.input-box__text{:placeholder => "type a message", :type => "text", :name => "message[content]"}
-          %label.message-label{:for => "message_image"}
+          %label.image-label{:for => "message_image"}
             %i.fa.fa-image
               %input#message_image.image-label__input{:type => "file", :name => "message[image]"}
-          %input.new-message__submit-btn{:type => "submit", :name => "commit", :value => "Send", :"data-disable-with" => "Send"}
+        %input.new-message__submit-btn{:type => "submit", :name => "commit", :value => "Send", :"data-disable-with" => "Send"}
 
 
