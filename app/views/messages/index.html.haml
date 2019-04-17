@@ -9,7 +9,7 @@
         = link_to '/users/:id/edit' do
           = fa_icon 'cog'
     .groups
-      %a{:href => '/groups/338/messages'}
+      =link_to '/groups/338/messages' do
         .group
           %p.group__group-name
             fff
@@ -22,7 +22,7 @@
         %ul.member-list
           Member :  
           %li.member-list__member tak
-      %a{:href => 'groups/338/edit'}
+      =link_to 'groups/338/edit' do 
         .main-header__edit-btn Edit
     .messages
       .message
@@ -31,14 +31,14 @@
           %p.upper-info__date  2019/00/00(sun) 00:00:00
         %p.message__text hello
     .form
-      %form#new_message.new-message{:enctype => "multipart/form-data", :action => "/groups/338/messages", :accept_charset => "UTF-8", :method => "post"}
-        %input{:name => "utf8", :type => "hidden", :value => "✓"}
-        %input{:type =>"hidden", :name => "authenticity_token", :value => "2lRrYagQNL9HSCsEIg9T2ODhmMyv24QsCb5av1x+BxMFmulp5vCysq+5QrdYbKKsvS4L4yOncyUoVWzfhmCFCA=="}
+      %form#new_message.new-message{enctype: "multipart/form-data", action:  "/groups/338/messages", accept_charset: "UTF-8", method: "post"}
+        %input{name: "utf8", type: "hidden", value: "✓"}
+        %input{type: "hidden", name: "authenticity_token", value: ""}
         .input-box
-          %input#message_content.input-box__text{:placeholder => "type a message", :type => "text", :name => "message[content]"}
-          %label.image-label{:for => "message_image"}
+          %input#message_content.input-box__text{placeholder: "type a message", type: "text", name: "message[content]"}
+          %label.image-label{for: "message_image"}
             %i.fa.fa-image
-              %input#message_image.image-label__input{:type => "file", :name => "message[image]"}
-        %input.new-message__submit-btn{:type => "submit", :name => "commit", :value => "Send", :"data-disable-with" => "Send"}
+              %input#message_image.image-label__input{type: "file", name: "message[image]"}
+        %input.new-message__submit-btn{type: "submit", name: "commit", value: "Send", data: {"disable-with": "Send"}}
 
 
