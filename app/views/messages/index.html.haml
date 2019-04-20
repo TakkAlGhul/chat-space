@@ -1,20 +1,5 @@
 .contents
-  .chat-side
-    .side-header
-      %p.side-header__user-name
-        tak
-      .side-header__user-menu
-        = link_to '#' do 
-          = fa_icon 'edit' 
-        = link_to '#' do
-          = fa_icon 'cog'
-    .groups
-      =link_to '#' do
-        .group
-          %p.group__group-name
-            fff
-          %p.group__latest-message
-            hello
+  = render partial: "groups/group"
   .chat-main
     .main-header
       .current-group
