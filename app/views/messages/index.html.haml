@@ -16,14 +16,12 @@
           %p.upper-info__date  2019/00/00(sun) 00:00:00
         %p.message__text hello
     .form
-      %form#new_message.new-message{enctype: "multipart/form-data", action:  "#", accept_charset: "UTF-8", method: "post"}
-        %input{name: "utf8", type: "hidden", value: "✓"}
-        %input{type: "hidden", name: "authenticity_token", value: ""}
-        .input-box
-          %input#message_content.input-box__text{placeholder: "type a message", type: "text", name: "message[content]"}
-          %label.image-label{for: "message_image"}
-            %i.fa.fa-image
-              %input#message_image.image-label__input{type: "file", name: "message[image]"}
-        %input.new-message__submit-btn{type: "submit", name: "commit", value: "Send", data: {"disable-with": "Send"}}
+      = form_for [@group, @message] do |f|
+        = f.text_field :body, class: 'form__message', placeholder: 'type a message'
+        .form__mask
+          = f.label :image, class: 'form__mask__image' do
+            = fa_icon 'image', class: 'icon'
+            = f.file_field :image, class: 'hidden'
+          = f.submit "Send", class: 'form__submit'
 
 
