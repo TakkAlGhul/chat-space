@@ -5,7 +5,7 @@
     .side-header__user-menu
       = link_to new_group_path do 
         = fa_icon 'edit', class: 'icon'
-      = link_to edit_user_path do
+      = link_to edit_user_path(current_user.id) do
         = fa_icon 'cog', class: 'icon'
   .groups
     .group
