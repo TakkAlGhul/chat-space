@@ -20,8 +20,6 @@ $(function() {
         e.preventDefault();
         var formData = new FormData(this);
         var url = $(this).attr('action')
-        // フォームの初期化
-        $('#new_message')[0].reset();
      
         $.ajax({
             type: 'POST',
@@ -36,6 +34,7 @@ $(function() {
             $('.messages').append(html);
             $('.form__message').val('');
             $('.form__message__image').val('');
+            $('#new_message')[0].reset();
             $('.form__submit').prop('disabled', false);
             $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight});
         })
