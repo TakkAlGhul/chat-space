@@ -20,7 +20,6 @@ $(function() {
         e.preventDefault();
         var formData = new FormData(this);
         var url = $(this).attr('action')
-        // $('input[type="file"]').val(null);
         $('#new_message')[0].reset();
      
 
