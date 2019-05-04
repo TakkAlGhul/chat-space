@@ -22,7 +22,6 @@ $(function() {
         var url = $(this).attr('action')
         $('#new_message')[0].reset();
      
-
         $.ajax({
             type: 'POST',
             url: url,
