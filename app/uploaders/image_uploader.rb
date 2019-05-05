@@ -29,7 +29,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   # end
 
   
-  process resize_to_limit: [800, 800]
+  process resize_to_limit: [300, 300]
   
 
   # Add a white list of extensions which are allowed to be uploaded.
