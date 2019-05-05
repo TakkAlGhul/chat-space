@@ -1,9 +1,9 @@
 $(function() {
-    function buildHTML(message) {
-        var img = ""
-        if(message.image !==null) {
-            img = `<img class="message__text__image" src="${ message.image }"></img>`
-        }    
+    function buildHTML(message) { 
+        var imgHTML = (message.image == null)
+                        ?("")
+                        :(`<img class="message__text__image" src="${ message.image }"></img>`);
+        
         var html = `<div class="message">
                         <div class="upper-info">
                             <div class= "upper-info__user">${ message.user_name }</div>
@@ -11,7 +11,7 @@ $(function() {
                         </div>
                         <div class="message__text">
                             <div class="message__test__body">${ message.body }</div>
-                            ${ img }
+                            ${ imgHTML }
                         </div>
                     </div>`
         return html;
@@ -33,11 +33,12 @@ $(function() {
             var html = buildHTML(data);
             $('.messages').append(html);
             $('#new_message')[0].reset();
-            $('.form__submit').prop('disabled', false);
             $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight});
         })
         .fail(function(){
-            alert('error');
+            alert('error');   
+        })
+        .always(function() {
             $('.form__submit').prop('disabled', false);
         })
     })
