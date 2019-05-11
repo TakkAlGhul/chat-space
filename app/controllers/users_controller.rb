@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.where("ID NOT IN (#{current_user.id})").where('name LIKE(?)', "%#{params[:keyword]}%").limit(10)
+    @users = User.where.not(id: current_user.id).where('name LIKE(?)', "%#{params[:keyword]}%").limit(10)
     respond_to do |format|
       format.html
       format.json
