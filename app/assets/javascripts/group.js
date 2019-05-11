@@ -2,14 +2,16 @@ $(function() {
 
 var userList = $('#user-search-result');
 var memberList = $('#chat-group-user'); 
-
+var user_ids = $('#user_ids').attr('value');
+console.log(user_ids);
 function appendUser(user) {
+    if (user_ids.indexOf(user.id) == -1) {
     var html = `<div class="chat-group-user clearfix">
                     <p class="chat-group-user__name">${ user.name }</p>
                     <div class="user-search-add chat-group-user__btn chat-group-user__btn--add" data-user-id=${ user.id } data-user-name=${ user.name }>追加</div>
                 </div>`
     userList.append(html);
-}
+}}
 function appendErrMsgToHTML(msg) {
     var html = `<p class= "chat-group-user">${ msg }</div>`
     userList.append(html);
