@@ -11,8 +11,8 @@
     .group
       - current_user.groups.each do |group|
         =link_to group_messages_path(group) do
-          .group__group-name 
+          .group__group-name{ data: { group_name: group.name }}
             = group.name
-          .group__latest-message 
+          .group__latest-message{ data: { last_message: group.show_last_message }}
             = group.show_last_message
             
