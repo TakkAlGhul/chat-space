@@ -2,7 +2,7 @@ $(function() {
     function buildHTML(message) { 
         var imgHTML = (message.image == null)
                         ?("")
-                        :(`<img class="message__text__image" src="${ message.image }"></img>`);
+                        :(`<img class="message__text__image" src="${ message.image }">`);
         
         var html = `<div class="message">
                         <div class="upper-info">
@@ -30,6 +30,7 @@ $(function() {
             contentType: false
         })
         .done(function(data) {
+
             var html = buildHTML(data);
             $('.messages').append(html);
             $('#new_message')[0].reset();
@@ -41,5 +42,40 @@ $(function() {
         .always(function() {
             $('.form__submit').prop('disabled', false);
         })
-    })
+    });
+
+    
+        $(function() {
+            if(location.href.match(/\/groups\/\d+\/messages/)){
+            setInterval(reloadMessages, 5000);    
+            }
+        });
+
+    
+        function reloadMessages() {
+            last_message_id = $('.message').last().attr('data-id');
+            
+            
+                
+        $.ajax({
+            url: location.href,
+            type: "GET",
+            data: { id: last_message_id },
+            dataType: "json",
+            processData: false,
+            contentType: false
+        }) 
+    
+        .done(function(messages){
+            messages.forEach(function(message) {
+                var html = buildHTML(message);
+                $('.messages').append(html);
+                $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight});   
+            })
+        
+        })
+        .fail(function(){
+           alert('error');
+        })
+    }  
 });

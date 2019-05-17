@@ -3,7 +3,7 @@ $(function() {
 var userList = $('#user-search-result');
 var memberList = $('#chat-group-user'); 
 var user_ids = $('#user_ids').attr('value');
-console.log(user_ids);
+
 function appendUser(user) {
     if (user_ids.indexOf(user.id) == -1) {
     var html = `<div class="chat-group-user clearfix">
@@ -28,7 +28,7 @@ function appendUserList(user_id, name) {
     $('#user-search-field').on("keyup", function() {
         var preWord;
         var input = $('#user-search-field').val();
-        if (input !== preWord && input.length !== 0) {
+        if (input !== preWord && input.length !== 0) { 
    
         
         
@@ -50,7 +50,8 @@ function appendUserList(user_id, name) {
             } 
         })
         .fail(function(){
-            alert('error')        
+            alert('error') 
+                   
         })
     }
     
@@ -68,6 +69,6 @@ function appendUserList(user_id, name) {
         })
         $(document).on("click", ".js-remove-btn", function (){
             $(this).parent().remove();
-        })
-    })
+        });
+    });
 });

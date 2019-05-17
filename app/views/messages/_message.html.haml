@@ -1,9 +1,9 @@
 
-.message
+.message{ data: { id: message.id }}
   .upper-info
     .upper-info__user
       = message.user.name
-    .upper-info__date  
+    .upper-info__date
       = message.created_at.strftime("%Y/%m/%d %H:%M")
   .message__text
     -if message.body.present?
