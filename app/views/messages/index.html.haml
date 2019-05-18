@@ -12,7 +12,7 @@
               = user.name
       =link_to edit_group_path(@group) do 
         .main-header__edit-btn Edit
-    .messages
+    .messages{ data: { id: @group.id }}
       = render @messages
 
     .form
